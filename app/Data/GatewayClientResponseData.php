@@ -10,6 +10,5 @@ class GatewayClientResponseData extends Data
         public string $externalId,
         public string $paymentUrl,
         public string $providerStatus,
-    ) {
-    }
+    ) {}
 }

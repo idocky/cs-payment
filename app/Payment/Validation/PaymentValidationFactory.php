@@ -12,8 +12,7 @@ class PaymentValidationFactory
      */
     public function __construct(
         private readonly iterable $strategies = [],
-    ) {
-    }
+    ) {}
 
     public function getStrategy(PaymentProvider $provider): PaymentValidationStrategy
     {

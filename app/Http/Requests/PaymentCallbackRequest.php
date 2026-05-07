@@ -30,12 +30,12 @@ class PaymentCallbackRequest extends FormRequest
             'provider' => ['required', Rule::in(PaymentProvider::allValues())],
         ];
 
-        if (!$provider) {
+        if (! $provider) {
             return $commonRules;
         }
 
         return array_merge($commonRules, $this->validationFactory
-                ->getStrategy($provider)
-                ->rules());
+            ->getStrategy($provider)
+            ->rules());
     }
 }

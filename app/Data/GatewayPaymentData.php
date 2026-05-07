@@ -10,6 +10,5 @@ readonly class GatewayPaymentData
         public string $externalId,
         public string $paymentUrl,
         public PaymentStatus $status,
-    ) {
-    }
+    ) {}
 }

@@ -16,6 +16,5 @@ class PaymentData extends Data
         public ?string $external_id = null,
         public ?string $payment_url = null,
         public string $status = PaymentStatus::Pending->value,
-    ) {
-    }
+    ) {}
 }

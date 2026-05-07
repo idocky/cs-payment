@@ -12,8 +12,7 @@ class PaymentService
 {
     public function __construct(
         private readonly PaymentGatewayFactory $paymentGatewayFactory,
-    ) {
-    }
+    ) {}
 
     public function store(PaymentData $data): Payment
     {

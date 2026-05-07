@@ -7,7 +7,6 @@ use Illuminate\Support\Str;
 
 class PayGateAClientMock implements PayGateAClientInterface
 {
-
     public function createPayment(int $amount, string $currency, string $merchantOrderId): GatewayClientResponseData
     {
         $paymentExternalId = Str::uuid()->toString();

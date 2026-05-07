@@ -9,15 +9,13 @@ use App\Models\Order;
 use App\Models\Payment;
 use App\Services\PaymentProviders\Clients\PayGateBClientInterface;
 use App\Services\PaymentProviders\StatusMappers\PayGateBStatusMapper;
-use Illuminate\Database\Eloquent\ModelNotFoundException;
 
 class PayGateBService implements PaymentGatewayInterface
 {
     public function __construct(
         private readonly PayGateBClientInterface $client,
         private readonly PayGateBStatusMapper $statusMapper,
-    ) {
-    }
+    ) {}
 
     public function createPayment(Order $order, PaymentData $paymentData): GatewayPaymentData
     {

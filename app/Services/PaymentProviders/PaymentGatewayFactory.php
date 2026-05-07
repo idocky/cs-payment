@@ -10,8 +10,7 @@ class PaymentGatewayFactory
     public function __construct(
         private readonly PayGateAService $payGateAService,
         private readonly PayGateBService $payGateBService,
-    ) {
-    }
+    ) {}
 
     public function make(PaymentProvider $provider): PaymentGatewayInterface
     {

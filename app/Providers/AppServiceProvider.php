@@ -2,9 +2,9 @@
 
 namespace App\Providers;
 
-use App\Payment\Validation\PaymentValidationFactory;
 use App\Payment\Validation\PaygateAValidation;
 use App\Payment\Validation\PaygateBValidation;
+use App\Payment\Validation\PaymentValidationFactory;
 use App\Services\PaymentProviders\Clients\PayGateAClientInterface;
 use App\Services\PaymentProviders\Clients\PayGateAClientMock;
 use App\Services\PaymentProviders\Clients\PayGateBClientInterface;
