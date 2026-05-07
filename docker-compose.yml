@@ -10,7 +10,7 @@ services:
             - "8000:80"
         depends_on:
             - app
-        container_name: project_nginx
+        container_name: cs_nginx
 
     app:
         build:

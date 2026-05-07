@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Data\PaymentData;
 use App\Http\Requests\PaymentCallbackRequest;
 use App\Http\Requests\PaymentRequest;
+use App\Http\Resources\StorePaymentResource;
 use App\Services\PaymentService;
 
 class PaymentController extends Controller
@@ -17,7 +18,7 @@ class PaymentController extends Controller
 
         $payment = $this->paymentService->store(PaymentData::from($validated));
 
-        return response()->json($payment);
+        return new StorePaymentResource($payment);
     }
 
     public function callback(PaymentCallbackRequest $request, string $provider)
@@ -27,6 +28,8 @@ class PaymentController extends Controller
             payload: $request->safe()->except('provider'),
         );
 
-        return response()->json($payment);
+        return response()->json([
+            'payment' => $payment,
+        ]);
     }
 }
